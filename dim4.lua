@@ -1,6 +1,6 @@
 local dim4 = {}
 dim4.timers = {}
-function dim4:newTimer(clock, sec, fnct, runOnCreation, cycleOnCreation, index)
+function dim4:newTimer(clock, sec, fnct, runOnCreation,  index)
 	local timer = {}
 
 	timer.delay = sec

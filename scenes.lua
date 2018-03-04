@@ -3,10 +3,10 @@ local scenes = {}
 scenes.cScene = nil
 scenes.cGui = nil
 scenes.oldFramecScene = nil
-scenes.defaultTileRes= {16, 12}
 
 
-function scenes.newScene(name, track,  tileRes)
+
+function scenes.newScene(name, track)
 	scene = {}
 	--scene.canvas = love.graphics.newCanvas(love.graphics.getDimensions())
 	scene.track = track
@@ -14,11 +14,6 @@ function scenes.newScene(name, track,  tileRes)
   scene.renderData = {}
   scene.events = { }
 
-	if tileRes then
-		scene.tileRes = tileRes
-	else
-		scene.tileRes = scenes.defaultTileRes
-	end	
 
 	function scene:renderTo(funct, id, objectTab)
 		--self.canvas:renderTo(funct)
@@ -69,9 +64,7 @@ function scenes.newScene(name, track,  tileRes)
     return self
   end
   
-  function scene:addAnimation(animation)
-    table.insert(self.animations, animation)
-  end
+
   	
   --scene:handleEvents = coroutine.wrap(function ()
   --[[function scene:handleEvents()
