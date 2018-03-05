@@ -61,6 +61,7 @@ local function formatData2(data)
     local indTypeForm
       for i, v in pairs(data) do
         assert((type(i) ~= "table"), "Data table cannot have an table as a key reference")
+        assert((v = data), "Cyclic tables are not allowed. At least not yet.")
         if type(i) == "string" then
           indTypeForm = "[\""..escape(i).."\"]"
         else
